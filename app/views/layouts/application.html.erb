@@ -2,10 +2,18 @@
 <html>
 <head>
   <title>Mebay</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<div id="header">
+  <h1>MeBay</h1>
+  <div id="nav">
+    <ul>
+      <li><a href="/ads/">All ads</a></li>
+    </ul>
+  </div>
+</div>
 <body>
 
 <%= yield %>

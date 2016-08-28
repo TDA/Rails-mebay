@@ -4,4 +4,8 @@ class AdsController < ApplicationController
     id = params[:id]
     @ad = Ad.find(id)
   end
+
+  def index
+    @ads = Ad.all
+  end
 end
