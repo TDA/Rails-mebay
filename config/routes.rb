@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/ads/:id' => 'ads#show'
+  get '/sellers/:id' => 'sellers#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
