@@ -8,4 +8,10 @@ class AdsController < ApplicationController
   def index
     @ads = Ad.all
   end
+
+  def rand_method
+    # this can be any generic method/function that needs to
+    # be used by this controller, either taking in params, or using
+    # instance variables
+  end
 end
