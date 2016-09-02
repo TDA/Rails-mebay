@@ -13,5 +13,11 @@ class AdsController < ApplicationController
     # this can be any generic method/function that needs to
     # be used by this controller, either taking in params, or using
     # instance variables
+    @instance_variable = 'sai'
+  end
+
+  def instance_method
+    # this has access to the instance_variables defined
+    puts @instance_variable
   end
 end
