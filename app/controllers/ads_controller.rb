@@ -1,8 +1,10 @@
 class AdsController < ApplicationController
+  attr_accessor :instance_variable
   def show
     # get the id
     id = params[:id]
     @ad = Ad.find(id)
+    @instance_variable
   end
 
   def index
