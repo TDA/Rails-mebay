@@ -11,6 +11,14 @@ class AdsController < ApplicationController
     @ads = Ad.all
   end
 
+  def create
+    @ads = Ad.all
+  end
+
+  def new
+    @ad = Ad.new
+  end
+
   def rand_method
     # this can be any generic method/function that needs to
     # be used by this controller, either taking in params, or using

@@ -1,9 +1,16 @@
-<form action="">
-  <input type="text" name="name" value="name">
-  <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
-  <input type="text" name="price" value="price">
-  <input type="text" name="seller_id" value="seller_id">
-  <input type="email" name="email" value="email">
-  <input type="text" name="img_url" value="img_url">
-  <input type="submit" value="Create">
-</form>
+<h1>New ad:</h1>
+<%= form_for (@ad) do |f| %>
+  <label for="ad_name">Name</label>
+    <%= f.text_field :name, class: "form-control" %><br>
+  <label for="ad_description">Description</label>
+    <%= f.text_area :description,  class: "form-control" %><br>
+  <label for="ad_price">Price</label>
+    <%= f.text_field :price, class: "form-control" %><br>
+  <label for="ad_seller_id">Seller_id</label>
+    <%= f.text_field :seller_id, class: "form-control" %><br>
+  <label for="ad_email">Email</label>
+    <%= f.text_field :email, class: "form-control" %><br>
+  <label for="ad_img_url">Img_url</label>
+    <%= f.text_field :img_url, class: "form-control" %><br>
+  <%= f.submit 'Submit', class: "form-control" %>
+<% end %>
