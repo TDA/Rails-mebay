@@ -12,11 +12,16 @@ class AdsController < ApplicationController
   end
 
   def create
-    @ads = Ad.all
+    @ad = Ad.new(sanitize_params)
+    @ad.save
   end
 
   def new
     @ad = Ad.new
+  end
+
+  def sanitize_params
+    params.require(:ad).permit!
   end
 
   def rand_method
