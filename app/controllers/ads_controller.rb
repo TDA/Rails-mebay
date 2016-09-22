@@ -4,7 +4,6 @@ class AdsController < ApplicationController
     # get the id
     id = params[:id]
     @ad = Ad.find(id)
-    @instance_variable
   end
 
   def index
@@ -21,19 +20,30 @@ class AdsController < ApplicationController
     @ad = Ad.new
   end
 
+  def edit
+    show
+  end
+
+  def update
+    show
+    puts sanitize_params
+    @ad.update_attributes(sanitize_params)
+    redirect_to action: "show", id: @ad
+  end
+
   def sanitize_params
     params.require(:ad).permit!
   end
 
-  def rand_method
-    # this can be any generic method/function that needs to
-    # be used by this controller, either taking in params, or using
-    # instance variables
-    @instance_variable = 'sai'
-  end
+  # def rand_method
+  #   # this can be any generic method/function that needs to
+  #   # be used by this controller, either taking in params, or using
+  #   # instance variables
+  #   @instance_variable = 'sai'
+  # end
 
-  def instance_method
-    # this has access to the instance_variables defined
-    puts @instance_variable
-  end
+  # def instance_method
+  #   # this has access to the instance_variables defined
+  #   puts @instance_variable
+  # end
 end
