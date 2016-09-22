@@ -14,6 +14,7 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(sanitize_params)
     @ad.save
+    redirect_to action: "show", id: @ad
   end
 
   def new
