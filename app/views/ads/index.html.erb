@@ -1,6 +1,6 @@
 All ads:
 <ul>
   <% @ads.each do |ad| %>
-  <li><%= link_to ad.name, ad %></li>
+  <li><%= link_to ad.name, ad %> <%= link_to "Delete", :action => "delete", :id => ad %></li>
   <% end %>
 </ul>
