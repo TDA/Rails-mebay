@@ -13,8 +13,11 @@ class AdsController < ApplicationController
 
   def create
     @ad = Ad.new(sanitize_params)
-    @ad.save
-    redirect_to action: "show", id: @ad
+    if @ad.save == true
+      redirect_to action: "show", id: @ad
+    else
+      render :new
+    end
   end
 
   def new
@@ -28,8 +31,11 @@ class AdsController < ApplicationController
   def update
     show
     puts sanitize_params
-    @ad.update_attributes(sanitize_params)
-    redirect_to action: "show", id: @ad
+    if @ad.update_attributes(sanitize_params) == true
+      redirect_to action: "show", id: @ad
+    else
+      render :edit
+    end
   end
 
   def delete
